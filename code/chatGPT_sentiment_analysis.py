@@ -1,17 +1,15 @@
 '''
-Sentiment Analysis Script
+ChatGPT Twitter Sentiment Analysis
 
 This script performs a sentiment analysis on a dataset of tweets related to
 OpenAI's Large Language Model (LLM), ChatGPT. Using Natural Language Processing
 (NLP), this script includes a series of functions for loading data,
 preprocessing text, visualising the sentiment and themes within the data and
 fitting the machine learning model to allow for the sentiment of further text
-data to be predicted. The purpose of this project was to retrieve insight into
-the public's perceptions of this revolutionary new artificial intelligence
-technology.
+data to be predicted.
 
 Author: Oscar Anderson
-Date: 11/01/2024
+Date: 2024-01-11
 
 Requirements:
 - pandas
@@ -55,27 +53,40 @@ def load_data(file_path: str, index_col: str = None) -> pd.DataFrame:
     
     return df
 
-def preprocess_text(text: str, stop_words: set, lemmatiser: WordNetLemmatizer) -> str:
+def preprocess_text(df: pd.DataFrame, text_column: str, stop_words: set, lemmatiser: WordNetLemmatizer) -> pd.DataFrame:
     '''
-    Preprocess tweet data by converting to lowercase, removing URLs, reducing
-    words to root form, and removing non-alphanumeric/stop words.
+    Preprocess tweet data in a DataFrame by converting to lowercase, removing
+    URLs, emojis, hashtags, non-alphanumeric characters and stop words, and
+    reducing words to their root form.
 
     Input:
-    - text (str): Input tweet data.
+    - df (pd.DataFrame): Input DataFrame.
+    - text_column (str): Name of the column containing tweet data.
     - stop_words (set): Set of stop words to be removed.
     - lemmatiser: Lemmatizer object.
 
     Output:
-    - str: Processed tweet data.
+    - pd.DataFrame: DataFrame with processed tweet data.
     '''
-    text = text.lower()  # Convert all to lowercase.
-    text = re.sub(r'http\S+', '', text)  # Remove any URLs.
+    processed_text = []
+    
+    for index, row in df.iterrows():
+        text = row[text_column].lower()  # Convert all to lowercase.
+        text = re.sub(r'http\S+', '', text) # Remove URLs.
+        text = text.encode('ascii', 'ignore').decode('ascii') # Remove emojis.
+        text = re.sub(r'#\w+', '', text) # Remove hashtags.
+        text = re.sub(r'[^A-Za-z0-9]+', ' ', text) # Remove non-alphanumeric characters.
 
-    # Reduce individual words to root form and remove non-alphanumeric/stop words.
-    words = word_tokenize(text)
-    words = [lemmatiser.lemmatize(word) for word in words if word.isalnum() and word not in stop_words]
+        # Reduce individual words to root form and remove stop words.
+        words = word_tokenize(text)
+        words = [lemmatiser.lemmatize(word) for word in words if len(word) > 1 and word not in stop_words]
 
-    return ' '.join(words)
+        processed_text.append(' '.join(words))
+
+    df['processed_tweets'] = processed_text
+
+    return df
+
 
 def plot_sentiment_freq(labels_data: pd.Series) -> None:
     '''
@@ -148,6 +159,8 @@ def fit_model(df: pd.DataFrame, text_data_col: str, labels_col: str) -> None:
     print('Accuracy:', accuracy_score(y_test, y_pred))
     print("\nConfusion Matrix:\n", confusion_matrix(y_test, y_pred))
     print("\nClassification Report:\n", classification_report(y_test, y_pred))
+    
+    return model, vectoriser
 
 # Load and inspect data.
 file_path = 'C:/Users/Oscar/Documents/Projects/chatGPT-sentiment-analysis/chatGPT_tweets.csv'
@@ -157,12 +170,11 @@ df = load_data(file_path, 'index')
 stop_words = set(stopwords.words('english'))
 lemmatiser = WordNetLemmatizer()
 tweet_data = df['tweets']
-df['processed_tweets'] = tweet_data.apply(lambda tweet: preprocess_text(tweet, stop_words, lemmatiser))
+df = preprocess_text(df, 'tweets', stop_words, lemmatiser)
 
 # Exploratory data analysis (EDA).
 plot_sentiment_freq(df['labels'])
 generate_word_cloud(df['processed_tweets'])
 
 # Fit Multinomial Naive Bayes model.
-fit_model(df, 'processed_tweets', 'labels')
-
+model, vectoriser = fit_model(df, 'processed_tweets', 'labels')
