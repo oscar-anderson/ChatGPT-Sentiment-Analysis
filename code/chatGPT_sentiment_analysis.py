@@ -6,7 +6,9 @@ OpenAI's Large Language Model (LLM), ChatGPT. Using Natural Language Processing
 (NLP), this script includes a series of functions for loading data,
 preprocessing text, visualising the sentiment and themes within the data and
 fitting the machine learning model to allow for the sentiment of further text
-data to be predicted.
+data to be predicted. The purpose of this project was to retrieve insight into
+the public's perceptions of this revolutionary new artificial intelligence
+technology.
 
 Author: Oscar Anderson
 Date: 11/01/2024
