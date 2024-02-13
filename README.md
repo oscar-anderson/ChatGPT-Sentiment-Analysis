@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project aims to perform sentiment analysis on a dataset of tweets related to OpenAI's Large Language Model, ChatGPT. The project involves natural language processing (NLP) techniques, including data loading, text preprocessing, exploratory data analysis (EDA), and the development of a machine learning model for sentiment prediction.
+This project aims to perform a sentiment analysis on a dataset of tweets related to OpenAI's Large Language Model, ChatGPT. The analysis involves natural language processing (NLP) techniques, including data loading, text preprocessing, exploratory data analysis (EDA), and the development of a multinomial naive Bayes machine learning model for sentiment prediction.
 
 ## Project Components
 
