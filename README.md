@@ -7,7 +7,7 @@ This project aims to perform a sentiment analysis on a dataset of tweets related
 ## Project Components
 
 1. **Data Loading**  
-   The project begins by loading tweet data from a CSV file into a pandas DataFrame using the `load_data` function. The loaded dataset includes two columns: 'tweets' containing the raw tweet text and 'labels' containing sentiment labels ('good', 'bad', 'neutral').
+   The project begins by loading tweet data from a CSV file into a pandas DataFrame using the `load_data` function. The loaded dataset includes three columns: 'index' containing the sequential identifiers of each tweet instance, 'tweets' containing the raw tweet text and 'labels' containing the respective sentiment of each tweet's content ('good', 'bad', 'neutral').
 
 2. **Text Preprocessing**  
    The `preprocess_text` function is implemented to clean and preprocess the tweet text. This includes converting text to lowercase, removing URLs, emojis, hashtags, non-alphanumeric characters, and stop words. Additionally, words are lemmatised to reduce them to their root form, enhancing the quality of the processed text data.
