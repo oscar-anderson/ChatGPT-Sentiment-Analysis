@@ -10,21 +10,21 @@ This project aims to perform a sentiment analysis on a dataset of tweets related
    The project begins by loading tweet data from a CSV file into a pandas DataFrame using the `load_data` function. The loaded dataset includes two columns: 'tweets' containing the raw tweet text and 'labels' containing sentiment labels ('good', 'bad', 'neutral').
 
 2. **Text Preprocessing**  
-   The `preprocess_text` function is implemented to clean and preprocess the tweet text. This includes converting text to lowercase, removing URLs, emojis, hashtags, non-alphanumeric characters, and stop words. Additionally, words are lemmatized to reduce them to their root form, enhancing the quality of the processed text data.
+   The `preprocess_text` function is implemented to clean and preprocess the tweet text. This includes converting text to lowercase, removing URLs, emojis, hashtags, non-alphanumeric characters, and stop words. Additionally, words are lemmatised to reduce them to their root form, enhancing the quality of the processed text data.
 
 3. **Exploratory Data Analysis (EDA)**  
-   EDA is conducted through two visualization functions: `plot_sentiment_freq` and `generate_word_cloud`.
+   EDA is conducted through two visualisation functions: `plot_sentiment_freq` and `generate_word_cloud`.
    - `plot_sentiment_freq` generates a bar plot displaying the distribution of sentiment labels in the dataset. This provides insights into the balance of different sentiment classes.
    - `generate_word_cloud` creates a word cloud based on the processed tweet data, visually representing the most frequent words. This offers an intuitive understanding of the prominent terms within the dataset.
 
 4. **Machine Learning Model**  
-   A Multinomial Naive Bayes model is implemented using scikit-learn to predict sentiment labels. The `fit_model` function tokenizes and vectorizes the processed tweet data, splits the data into training and testing sets, and fits the model. The accuracy, confusion matrix, and classification report are then displayed.
+   A Multinomial Naive Bayes model is implemented using scikit-learn to predict sentiment labels. The `fit_model` function tokenises and vectorises the processed tweet data, splits the data into training and testing sets, and fits the model. The accuracy, confusion matrix, and classification report are then displayed.
 
 ## Project Results
 
 ### Sentiment Frequency Analysis
 
-The observation of an imbalanced distribution in the sentiment frequency histogram is noteworthy. The prevalence of 'bad' tweets surpassing 'good' and 'neutral' tweets suggests a potential skew in public sentiment within the sampled tweets. While this could be a reflection of the natural trend in public sentiment, it is essential to recognize that imbalances might introduce biases, impacting the model's generalization ability. Therefore, acknowledging this imbalance becomes crucial for a nuanced interpretation of the model's performance.
+The observation of an imbalanced distribution in the sentiment frequency histogram is noteworthy. The prevalence of 'bad' tweets surpassing 'good' and 'neutral' tweets suggests a potential skew in public sentiment within the sampled tweets. While this could be a reflection of the natural trend in public sentiment, it is essential to recognise that imbalances might introduce biases, impacting the model's generalisation ability. Therefore, acknowledging this imbalance becomes crucial for a nuanced interpretation of the model's performance.
 
 ### Word Cloud Insights
 
@@ -60,7 +60,7 @@ The Multinomial Naive Bayes model achieves an accuracy of approximately 74%. The
 
 Understanding these key terms provides a qualitative lens through which to interpret public sentiment. These insights not only aid in comprehending user perceptions but also contribute to refining the sentiment analysis model, ensuring it captures the nuances and dynamics within the ChatGPT-related discourse on Twitter.
 
-- **Model Performance:** The machine learning model's accuracy of 74% indicates a reasonable predictive capability. Further optimizations, such as hyperparameter tuning or experimenting with different models, could potentially enhance performance.
+- **Model Performance:** The machine learning model's accuracy of 74% indicates a reasonable predictive capability. Further optimisations, such as hyperparameter tuning or experimenting with different models, could potentially enhance performance.
 
 ## Future Work
 
