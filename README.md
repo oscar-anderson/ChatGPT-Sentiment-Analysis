@@ -26,9 +26,15 @@ This project aims to perform a sentiment analysis on a dataset of tweets related
 
 The observation of an imbalanced distribution in the sentiment frequency histogram is noteworthy. The prevalence of 'bad' tweets surpassing 'good' and 'neutral' tweets suggests a potential skew in public sentiment within the sampled tweets. While this could be a reflection of the natural trend in public sentiment, it is essential to recognise that imbalances might introduce biases, impacting the model's generalisation ability. Therefore, acknowledging this imbalance becomes crucial for a nuanced interpretation of the model's performance.
 
+![Sentiment distribution](figures/sentiment_distribution.png)
+
 ### Word Cloud Insights
 
-The word cloud analysis unveils significant terms recurrent in ChatGPT-related tweets, offering valuable insights into public sentiment and prevailing topics. The prominence of terms like 'chatgpt', 'ai', 'openai', 'good', 'people', and 'chatbot' suggests several key aspects:
+The word cloud analysis unveils significant terms recurrent in ChatGPT-related tweets, offering valuable insights into public sentiment and prevailing topics.
+
+![Word cloud](figures/wordcloud.png)
+
+The prominence of terms like 'chatgpt', 'ai', 'openai', 'good', 'people', and 'chatbot' suggests several key aspects:
 
 1. **Positive Associations:** The presence of terms like 'good' and 'people' may indicate a positive sentiment or favourable experiences shared by users. This could signify a positive user reception towards ChatGPT.
 
