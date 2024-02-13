@@ -42,7 +42,7 @@ Understanding these key terms provides a qualitative lens through which to inter
 
 ### Model Performance
 
-The Multinomial Naive Bayes model achieves an accuracy of approximately 74%. The confusion matrix and classification report further detail the model's performance across different sentiment classes. Precision, recall, and F1-score metrics contribute to a comprehensive evaluation of the model's predictive capabilities.
+The Multinomial Naive Bayes model achieves an accuracy of approximately 74%. The confusion matrix and classification report output by the main script further detail the model's performance across different sentiment classes. Precision, recall, and F1-score metrics contribute to a comprehensive evaluation of the model's predictive capabilities.
 
 ## Project Implications
 
