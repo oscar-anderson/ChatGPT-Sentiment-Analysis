@@ -50,6 +50,26 @@ Understanding these key terms provides a qualitative lens through which to inter
 
 The Multinomial Naive Bayes model achieves an accuracy of approximately 74%. The confusion matrix and classification report output by the main script further detail the model's performance across different sentiment classes. Precision, recall, and F1-score metrics contribute to a comprehensive evaluation of the model's predictive capabilities.
 
+```
+Accuracy: 0.7375681160081169
+
+Confusion Matrix:
+ [[18809  1091  1430]
+ [  566  9042  1676]
+ [ 2885  3862  4498]]
+
+Classification Report:
+               precision    recall  f1-score   support
+
+         bad       0.84      0.88      0.86     21330
+        good       0.65      0.80      0.72     11284
+     neutral       0.59      0.40      0.48     11245
+
+    accuracy                           0.74     43859
+   macro avg       0.69      0.69      0.69     43859
+weighted avg       0.73      0.74      0.73     43859
+```
+
 ## Project Implications
 
 - **Dataset Characteristics:** Understanding the imbalanced nature of the dataset is crucial for interpreting the model's performance. Consideration should be given to potential biases introduced by the dataset's composition.
