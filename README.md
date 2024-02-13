@@ -30,7 +30,7 @@ The observation of an imbalanced distribution in the sentiment frequency histogr
 
 ### Word Cloud Insights
 
-The word cloud analysis unveils significant terms recurrent in ChatGPT-related tweets, offering valuable insights into public sentiment and prevailing topics.
+The word cloud analysis reveals significant terms recurrent in ChatGPT-related tweets, offering valuable insights into public sentiment and prevailing topics. The meaningful terms and words captured here also indicate the successful preprocessing of the raw tweet data.
 
 ![Word cloud](figures/wordcloud.png)
 
