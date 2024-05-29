@@ -98,7 +98,7 @@ Understanding these key terms provides a qualitative lens through which to inter
 
 ## Conclusion
 
-The ChatGPT Twitter Sentiment Analysis project offers a practical tool for those interested in sentiment analysis and NLP. Examining sentiments in ChatGPT-related tweets, the analysis reveals an imbalance in sentiment classes, with a higher frequency of 'bad' tweets. While the Multinomial Naive Bayes model achieves a 74% accuracy, its performance varies across sentiment categories. Precision, recall, and F1-score metrics provide insights.
+This ChatGPT Twitter Sentiment Analysis project offers a practical tool for those interested in sentiment analysis and NLP. Examining sentiments in ChatGPT-related tweets, the analysis reveals an imbalance in sentiment classes, with a higher frequency of 'bad' tweets. While the Multinomial Naive Bayes model achieves a 74% accuracy, its performance varies across sentiment categories. Precision, recall, and F1-score metrics provide insights.
 
 The word cloud analysis highlights key terms like 'chatgpt,' 'ai,' 'openai,' 'good,' and 'people,' shedding light on user sentiments. These findings suggest potential positive associations, technological discussions, and user engagement.
 
